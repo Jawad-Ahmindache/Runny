@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>chargement.qml</file>
+        <file>connexion.qml</file>
+        <file>accueil.qml</file>
+        <file>classement_general.qml</file>
+        <file>classement_perso.qml</file>
+        <file>inscription_course.qml</file>
+        <file>course_detail.qml</file>
+        <file>live_course_detail.qml</file>
+        <file>font/Segoe_UI.ttf</file>
+        <file>img/man_loading.gif</file>
+        <file>img/favicon.png</file>
+        <file>component/InputField.qml</file>
+        <file>component/AlertMessage.qml</file>
+    </qresource>
+</RCC>
