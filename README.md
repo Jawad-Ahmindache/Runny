@@ -2,7 +2,7 @@ Ce projet s'inscrit dans le cadre de mon BTS en informatique, c'est une applicat
 
 Comme fonctionnalités non exhaustives l'application comprend :
 
-✅ Visualiser les performances d'un utilisateur sur ses courses passées, 
+✅ Visualiser les performances d'un utilisateur sur ses courses passées, <br/>
 ✅ Voir en temps réel en connectant l'application avec un bracelet bluetooth les performances d'une course en cours
 ✅ Classement à partir des données de la Base de donnée
 ✅ Graphiques
