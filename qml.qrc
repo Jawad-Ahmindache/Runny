@@ -14,5 +14,16 @@
         <file>img/favicon.png</file>
         <file>component/InputField.qml</file>
         <file>component/AlertMessage.qml</file>
+        <file>component/Header.qml</file>
+        <file>js/login.js</file>
+        <file>js/global.js</file>
+        <file>img/back-arrow.png</file>
+        <file>img/favicon2.png</file>
+        <file>component/Footer.qml</file>
+        <file>js/Footer.js</file>
+        <file>img/chronometer.svg</file>
+        <file>img/exit.svg</file>
+        <file>img/house.svg</file>
+        <file>img/plus.svg</file>
     </qresource>
 </RCC>

@@ -1,29 +1,30 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.13
-import "component/"
-
-
+import "component/";
+import "js/global.js" as Global
 Item{
+
 
     width:parent.width
     height:parent.height
-    AlertMessage{
-
-    }
 
     Rectangle{
+
         color: "#0094EC"
         width:parent.width
         height:parent.height
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-
+        id: firstContainer
 
         Image{
             id: logoConnexion
             source: "./img/favicon.png"
-            width: parent.width * 0.70
-            height: width
+
+            width: Global.maxWidth(parent.width * 0.70, 260);
+
+
+            height: width;
             y:parent.width*0.10
             anchors.horizontalCenter: parent.horizontalCenter
 
@@ -50,15 +51,16 @@ Item{
                 id:password
                 textLabel: "Mot de passe"
                 textInput: "Entrez votre mot de passe"
-                y: 100
+                mode: "password"
+                y: login.height + login.y + 25
             }
 
             Rectangle{
                 id: boutonsBox
                 width: parent.width
                 anchors.horizontalCenter: parent.horizontalCenter
-                y:  password.y + password.height + 50
-                height:screenHeight*0.07
+                y:  password.y + password.height + 30
+                height:screenHeight*0.06
                 radius: 8
                 color:"transparent"
                 Rectangle{
@@ -68,7 +70,6 @@ Item{
                     width: (parent.width/2) - 10
                     color:parentColor
                     radius: 8
-                    y:0;
                     x:0;
 
 
@@ -134,10 +135,46 @@ Item{
                         horizontalAlignment:  TextInput.AlignHCenter
 
                     }
+
                     Connections{
                         target: _User
                         onLoginResult:function(response){
-                            console.log(response);
+
+
+                            let loginResponse = JSON.parse(response);
+                            var newObject;
+                            if(loginResponse.type === "error"){
+                                    newObject = Qt.createQmlObject('import "component/";
+                                                        AlertMessage {
+                                                            type:\"error\"
+                                                            textAlert : "'+loginResponse.message+'"
+                                                        }'
+                                                        ,firstContainer);
+
+                                               newObject.destroy(2000);
+
+
+                            }
+
+                            if(loginResponse.type === "success"){
+
+                                    newObject = Qt.createQmlObject('import "component/";
+                                                        AlertMessage {
+                                                            id: testmm
+                                                            type:\"success\"
+                                                            textAlert : "'+loginResponse.message+'"
+
+
+                                                        }
+
+
+                                                        '
+                                                         ,firstContainer);
+
+                                            newObject.destroy(2000);
+                                _core.changerPage("accueil.qml");
+
+                            }
                         }
                     }
 

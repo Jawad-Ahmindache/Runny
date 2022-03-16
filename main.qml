@@ -2,21 +2,17 @@ import QtQuick 2.14
 import QtQuick.Window 2.14
 import QtQuick.Controls 2.13
 
+
 Window {
-    property int screenWidth : 375
-    property int screenHeight : 667
+    property int screenWidth : 375 //Screen.desktopAvailableWidth
+    property int screenHeight : 600 //Screen.desktopAvailableHeight
     property string screenOrientation
     visible: true
-  // visibility: Qt.WindowFullScreen
+   // visibility: Qt.WindowFullScreen
     width: screenWidth
     height: screenHeight
     id: fenetrePrincipale
-    onWidthChanged: {
 
-        /*  fenetrePrincipale.screenWidth = this.Screen.width
-            fenetrePrincipale.screenHeight = this.Screen.height
-        fenetrePrincipale.screenOrientation = Screen.orientation*/
-    }
 
     FontLoader { id: segoeUI; source: "./font/Segoe_UI.ttf" }
 
@@ -28,9 +24,11 @@ Window {
            height: parent.height
     }
     Connections {
-        target: monObjet
+        target: _core
         onPageAfficher:function(nomPage){
             pageEnCours.source = nomPage
         }
     }
+
+
 }

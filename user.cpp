@@ -5,6 +5,8 @@ User::User(QObject *parent) : QObject(parent)
     QObject::connect(manager, SIGNAL(finished(QNetworkReply*)),this, SLOT(getRequestReply(QNetworkReply*)));
 
 }
+
+
 void User::newConnexion(QString login, QString password,QString queryURL){
     QNetworkRequest request;
     request.setUrl(queryURL);

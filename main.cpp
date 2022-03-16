@@ -11,13 +11,13 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     qputenv("QT_STYLE_OVERRIDE","Styles");
 
-    MonAppli p;
+    MonAppli *core = new MonAppli;
 
-    User *test = new User();
+    User *login = new User();
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("monObjet", &p);
-    engine.rootContext()->setContextProperty("_User", test);
+    engine.rootContext()->setContextProperty("_core", core);
+    engine.rootContext()->setContextProperty("_User", login);
 
     engine.load(QStringLiteral("qrc:/main.qml"));
 

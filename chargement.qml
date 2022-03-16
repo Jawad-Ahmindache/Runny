@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.13
-
+import "js/global.js" as Global
 
 
 Item{
@@ -14,7 +14,7 @@ Item{
             id: manLoading;
             source: "./img/man_loading.gif"
             anchors.horizontalCenter: parent.horizontalCenter
-            width: parent.width*0.80
+            width: Global.maxWidth(parent.width*0.80,500)
             height: width*0.80
             y: parent.height/4
 
@@ -37,7 +37,7 @@ Item{
 
         Timer {
                interval: 2000; running: true; repeat: true
-               onTriggered:  { monObjet.changerPage("connexion.qml") }
+               onTriggered:  { _core.changerPage("connexion.qml") }
          }
 
 

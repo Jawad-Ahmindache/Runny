@@ -6,7 +6,8 @@ Rectangle{
     property string textLabel : "Label"
     property string textInput : "Input"
     property alias inputValue : ruTextField.text;
-    property int heightInput: screenHeight*0.07
+    property int heightInput: screenHeight*0.06
+    property string mode : "normal";
     color:"transparent"
     Label {
         id: ruLabel
@@ -30,7 +31,7 @@ Rectangle{
        font.pixelSize: height/2.8
        verticalAlignment: Qt.AlignVCenter
        horizontalAlignment: Qt.AlignLeft
-
+       echoMode : parent.mode === "password" ? TextInput.Password : TextInput.Normal;
 
        background: Rectangle{
             color:"white"

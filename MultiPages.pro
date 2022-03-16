@@ -19,7 +19,8 @@ SOURCES += \
         user.cpp
 
 RESOURCES += qml.qrc
-SUBDIRS += component/
+SUBDIRS += component/ \
+           js/
 
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
